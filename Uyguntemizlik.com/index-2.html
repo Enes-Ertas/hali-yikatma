@@ -19,8 +19,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicons - Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/img/icon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/icon.ico" type="image/x-icon">
 
     <!--==============================
 	  Google Fonts
@@ -370,7 +370,7 @@
                             <div class="vs-hero__subtitle wow animate__fadeInUp" data-wow-delay="0.60s"><span
                                     class="icon"><img src="assets/img/icon/satisfaction-icon.svg"
                                         alt="Hero Icon"></span>100% Memnuniyet </div>
-                            <h1 class="vs-hero__title wow animate__fadeInUp" data-wow-delay="0.70s">Halı Yıkama <span
+                            <h1 class="vs-hero__title wow animate__fadeInUp" data-wow-delay="0.70s">Koltuk Yıkama <span
                                     class="vs-hero__title--highlight">ve Temizlik</span> Çözümleri</h1>
                             <p class="vs-hero__text wow animate__fadeInUp" style="color:white;" data-wow-delay="0.80s">
                                 İstanbul'un tüm ilçelerine ücretsiz teslimat hizmeti.</p>
@@ -992,7 +992,7 @@
         </div>
         <div class="testi-shape">
             <span class="testi-bg">
-                <img src="assets/img/bg/book-bg-1-2.html" alt="testi element">
+                <img src="assets/img/bg/book-bg-1-2.html" alt="">
             </span>
         </div>
         <span class="shape-mockup d-xl-block d-none wow animate__fadeInLeft" style="right: 0px; top: 60px;"><img
@@ -1220,11 +1220,10 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-        // Show button text after 60 seconds with slide in/out animation
         window.addEventListener('load', () => {
             const btnTexts = document.querySelectorAll('#floating-buttons .btn-text');
             let visible = false;
-
+    
             const showTexts = () => {
                 btnTexts.forEach(el => {
                     el.style.opacity = '1';
@@ -1232,7 +1231,7 @@
                 });
                 visible = true;
             };
-
+    
             const hideTexts = () => {
                 btnTexts.forEach(el => {
                     el.style.opacity = '0';
@@ -1240,40 +1239,36 @@
                 });
                 visible = false;
             };
-
-
-
+    
             setTimeout(showTexts, 60000);
-
-            // Optional: toggle text visibility on button hover
-            document.getElementById('whatsappBtn').addEventListener('mouseenter', () => {
-                if (!visible) showTexts();
+    
+            // Ensure hover functionality doesn't conflict
+            const buttons = ['whatsappBtn', 'phoneBtn'];
+            buttons.forEach(buttonId => {
+                const button = document.getElementById(buttonId);
+                button.addEventListener('mouseenter', () => {
+                    showTexts();
+                });
+                button.addEventListener('mouseleave', () => {
+                    if (!visible) hideTexts();
+                });
             });
-            document.getElementById('whatsappBtn').addEventListener('mouseleave', () => {
-                if (visible) hideTexts();
+    
+            // WhatsApp button click
+            document.getElementById('whatsappBtn').addEventListener('click', () => {
+                window.open('https://wa.me/05456033448', '_blank');
             });
-            document.getElementById('phoneBtn').addEventListener('mouseenter', () => {
-                if (!visible) showTexts();
+    
+            // Phone button click
+            document.getElementById('phoneBtn').addEventListener('click', () => {
+                window.location.href = 'tel:05456033448';
             });
-            document.getElementById('phoneBtn').addEventListener('mouseleave', () => {
-                if (visible) hideTexts();
+    
+            // Back to top button functionality
+            const backToTopBtn = document.getElementById('backToTop');
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-        });
-
-        // WhatsApp button click
-        document.getElementById('whatsappBtn').addEventListener('click', () => {
-            window.open('https://wa.me/05456033448', '_blank');
-        });
-
-        // Phone button click
-        document.getElementById('phoneBtn').addEventListener('click', () => {
-            window.location.href = 'tel:05456033448';
-        });
-
-        // Back to top button functionality (if not already implemented)
-        const backToTopBtn = document.getElementById('backToTop');
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 
