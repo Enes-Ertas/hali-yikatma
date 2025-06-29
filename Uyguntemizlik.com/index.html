@@ -340,14 +340,17 @@
                                 <div class="header-inner">
                                     <div class="header-icons">
                                         <button class="searchBoxTggler"><i class="fal fa-search"></i></button>
-                                        <a class="icon-btn" href="https://wa.me/05456033448"><img src="assets/img/wp.png" alt="WhatsApp" style="width: 33px; height: 33px; margin-bottom: 16%; ">
+                                        <a class="icon-btn" href="https://wa.me/05456033448"><img
+                                                src="assets/img/wp.png" alt="WhatsApp"
+                                                style="width: 33px; height: 33px; margin-bottom: 16%; ">
                                             <span class="btn-text"
                                                 style="font-size: 25px; font-weight: bolder;"></i></a>
                                     </div>
                                     <div class="contact-content">
-                                        <p class="contact-title"><a href="tel:05456033448"><i class="fal fa-phone"></i>
-                                                0545 603 34 48</a></p>
-                                        <h6 class="contact-title"><a href="tel:05456033448"><i
+                                        <p class="contact-title"><a href="tel:+905319439334"><i
+                                                    class="fal fa-phone"></i>
+                                                0531 943 93 34</a></p>
+                                        <h6 class="contact-title"><a href="tel:+905456033448"><i
                                                     class="fal fa-mobile"></i> 0545 603 34 48</a></h6>
                                     </div>
                                 </div>
@@ -525,7 +528,7 @@
                             <img src="assets/img/icon/author-icon.png" alt="author image">
                             <div class="contact-content">
                                 <p class="contact-text">Ofis Telefonumuz</p>
-                                <h6 class="contact-title"><a href="tel:+905456033448">0545 603 34 48</a></h6>
+                                <h6 class="contact-title"><a href="tel:+905319439334">0531 943 93 34</a></h6>
                             </div>
                         </div>
                         <div class="about-inner mb-0 wow animate__fadeInUp" data-wow-delay="0.25s">
@@ -901,8 +904,8 @@
             <div class="row gx-60 z-index position-relative justify-content-center align-items-center">
                 <div class="col-lg-5 text-center text-xxl-start">
                     <div class="video-box wow animate__fadeInUp">
-                        <h2 class="video-title h4  title-anime animation-style2" data-wow-delay="0.3s">Video İzle</h2>
-                        <a href="https://www.youtube.com/watch?v=jTgZjg4x7Gk" class="play-btn popup-video">
+                        <h2 class="video-title h4 title-anime animation-style2" data-wow-delay="0.3s">Video İzle</h2>
+                        <a href="#videoPopup2" class="play-btn" id="playLocalVideo2">
                             <i class="fas fa-play"></i>
                         </a>
                         <span class="shape-mockup vs-slider-shape-1 d-md-block d-none" style="left: -55%; top: 0%;">
@@ -933,6 +936,15 @@
                                         </button>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div id="videoPopup2" class="video-popup">
+                            <div class="video-popup-content">
+                                <span class="video-close">&times;</span>
+                                <video id="localVideo2" controls autoplay>
+                                    <source src="assets/img/araba.mp4" type="video/mp4">
+                                    Tarayıcınız video etiketini desteklemiyor.
+                                </video>
                             </div>
                         </div>
                         <div class="testi-items wow animate__fadeInUp" data-wow-delay="0.35s">
@@ -993,7 +1005,7 @@
         </div>
         <div class="testi-shape">
             <span class="testi-bg">
-                
+
             </span>
         </div>
         <span class="shape-mockup d-xl-block d-none wow animate__fadeInLeft" style="right: 0px; top: 60px;"><img
@@ -1133,8 +1145,8 @@
                             <div class="contact-box">
                                 <span class="icon"><img src="assets/img/icon/call-icon.svg" alt="icon"></span>
                                 <div class="contact-content">
-                                    <h6 class="contact-title"><a href="tel:+05456033448">0545 603 34 48</a></h6>
-                                    <h6 class="contact-title"><a href="tel%2b902126209991.html">0545 603 34 48</a></h6>
+                                    <h6 class="contact-title"><a href="tel:+05456033448">0531 943 93 34</a></h6>
+                                    <h6 class="contact-title"><a href="tel:+05319439334">0545 603 34 48</a></h6>
                                     <h6 class="contact-title"><a href="https://wa.me/05456033448">WHATSAPP</a></h6>
                                     <p class="contact-text">7/24 bizi arayabilirsiniz</p>
                                 </div>
@@ -1224,7 +1236,7 @@
         window.addEventListener('load', () => {
             const btnTexts = document.querySelectorAll('#floating-buttons .btn-text');
             let visible = false;
-    
+
             const showTexts = () => {
                 btnTexts.forEach(el => {
                     el.style.opacity = '1';
@@ -1232,7 +1244,7 @@
                 });
                 visible = true;
             };
-    
+
             const hideTexts = () => {
                 btnTexts.forEach(el => {
                     el.style.opacity = '0';
@@ -1240,9 +1252,9 @@
                 });
                 visible = false;
             };
-    
+
             setTimeout(showTexts, 60000);
-    
+
             // Ensure hover functionality doesn't conflict
             const buttons = ['whatsappBtn', 'phoneBtn'];
             buttons.forEach(buttonId => {
@@ -1254,21 +1266,36 @@
                     if (!visible) hideTexts();
                 });
             });
-    
+
             // WhatsApp button click
             document.getElementById('whatsappBtn').addEventListener('click', () => {
                 window.open('https://wa.me/05456033448', '_blank');
             });
-    
+
             // Phone button click
             document.getElementById('phoneBtn').addEventListener('click', () => {
                 window.location.href = 'tel:05456033448';
             });
-    
+
             // Back to top button functionality
             const backToTopBtn = document.getElementById('backToTop');
             backToTopBtn.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        document.getElementById("playLocalVideo2").addEventListener("click", function (e) {
+            e.preventDefault();
+            document.getElementById("videoPopup2").style.display = "block";
+        });
+
+        document.querySelectorAll(".video-close").forEach(function (closeBtn) {
+            closeBtn.addEventListener("click", function () {
+                const popup = this.closest(".video-popup");
+                popup.style.display = "none";
+                const video = popup.querySelector("video");
+                video.pause();
+                video.currentTime = 0;
             });
         });
     </script>

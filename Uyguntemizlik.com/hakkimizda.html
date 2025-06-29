@@ -340,14 +340,17 @@
                                 <div class="header-inner">
                                     <div class="header-icons">
                                         <button class="searchBoxTggler"><i class="fal fa-search"></i></button>
-                                        <a class="icon-btn" href="https://wa.me/05456033448"><img src="assets/img/wp.png" alt="WhatsApp" style="width: 33px; height: 33px; margin-bottom: 16%; ">
+                                        <a class="icon-btn" href="https://wa.me/05456033448"><img
+                                                src="assets/img/wp.png" alt="WhatsApp"
+                                                style="width: 33px; height: 33px; margin-bottom: 16%; ">
                                             <span class="btn-text"
                                                 style="font-size: 25px; font-weight: bolder;"></i></a>
                                     </div>
                                     <div class="contact-content">
-                                        <p class="contact-title"><a href="tel:05456033448"><i class="fal fa-phone"></i>
-                                                0545 603 34 48</a></p>
-                                        <h6 class="contact-title"><a href="tel:05456033448"><i
+                                        <p class="contact-title"><a href="tel:+905319439334"><i
+                                                    class="fal fa-phone"></i>
+                                                0531 943 93 34</a></p>
+                                        <h6 class="contact-title"><a href="tel:+905456033448"><i
                                                     class="fal fa-mobile"></i> 0545 603 34 48</a></h6>
                                     </div>
                                 </div>
@@ -434,7 +437,7 @@
                             <img src="assets/img/icon/author-icon.png" alt="author image">
                             <div class="contact-content">
                                 <p class="contact-text">Ofis Telefonumuz</p>
-                                <h6 class="contact-title"><a href="tel:+902126209991">0212 620 99 91</a></h6>
+                                <h6 class="contact-title"><a href="tel:+905319439334">0531 943 93 34</a></h6>
                             </div>
                         </div>
                         <div class="about-inner mb-0 wow animate__fadeInUp" data-wow-delay="0.25s">
@@ -457,7 +460,7 @@
             <div class="video-style1 background-image" data-bg-src="assets/img/bg/video-bg1.png">
                 <div class="row justify-content-center">
                     <div class="video-area text-center">
-                        <a href="https://www.youtube.com/watch?v=jTgZjg4x7Gk" class="play-btn popup-video">
+                        <a href="#videoPopup" class="play-btn" id="playLocalVideo">
                             <i class="fas fa-play"></i>
                         </a>
                     </div>
@@ -471,6 +474,17 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Video Popup Modal -->
+        <div id="videoPopup" class="video-popup">
+            <div class="video-popup-content">
+                <span class="video-close">&times;</span>
+                <video id="localVideo" controls autoplay>
+                    <source src="assets/img/temiz.mp4" type="video/mp4">
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
             </div>
         </div>
         <div class="container">
@@ -547,8 +561,8 @@
                             <div class="contact-box">
                                 <span class="icon"><img src="assets/img/icon/call-icon.svg" alt="icon"></span>
                                 <div class="contact-content">
-                                    <h6 class="contact-title"><a href="tel:+05456033448">0545 603 34 48</a></h6>
-                                    <h6 class="contact-title"><a href="tel%2b902126209991.html">0545 603 34 48</a></h6>
+                                    <h6 class="contact-title"><a href="tel:+05456033448">0531 943 93 34</a></h6>
+                                    <h6 class="contact-title"><a href="tel:+05319439334">0545 603 34 48</a></h6>
                                     <h6 class="contact-title"><a href="https://wa.me/05456033448">WHATSAPP</a></h6>
                                     <p class="contact-text">7/24 bizi arayabilirsiniz</p>
                                 </div>
@@ -690,6 +704,20 @@
         backToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+
+
+        document.getElementById("playLocalVideo").addEventListener("click", function (e) {
+            e.preventDefault();
+            document.getElementById("videoPopup").style.display = "block";
+        });
+
+        document.querySelector(".video-close").addEventListener("click", function () {
+            document.getElementById("videoPopup").style.display = "none";
+            const video = document.getElementById("localVideo");
+            video.pause();
+            video.currentTime = 0;
+        });
+
     </script>
 
 </body>
