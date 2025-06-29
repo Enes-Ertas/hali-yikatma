@@ -899,11 +899,12 @@
     <!-- Service Area End  -->
 
     <!-- Book Area -->
-    <section class="testi-layout3 space position-relative ">
+    <section class="testi-layout3 space position-relative" data-bg-src="assets/img/bg/video-bg1.png">
         <div class="container">
             <div class="row gx-60 z-index position-relative justify-content-center align-items-center">
                 <div class="col-lg-5 text-center text-xxl-start">
-                    <div class="video-box wow animate__fadeInUp">
+                    <!-- Arka planlı video kutusu -->
+                    <div class="video-box wow animate__fadeInUp background-image">
                         <h2 class="video-title h4 title-anime animation-style2" data-wow-delay="0.3s">Video İzle</h2>
                         <a href="#videoPopup2" class="play-btn" id="playLocalVideo2">
                             <i class="fas fa-play"></i>
@@ -913,15 +914,13 @@
                         </span>
                     </div>
                 </div>
+    
                 <div class="col-lg-7">
                     <div class="testi-body">
                         <div class="title-inner">
-                            <div class="title-area text-left wow animate__fadeInUp title-anime animation-style5"
-                                data-wow-delay="0.25s">
-                                <span
-                                    class="sec-subtitle  left-shape justify-content-center title-anime__title">REFERANSLARIMIZ</span>
-                                <h2 class="sec-title title-anime__title">Müşterimiz <span
-                                        class="title-highlight">Hakkımızda</span> Ne Söylüyor</h2>
+                            <div class="title-area text-left wow animate__fadeInUp title-anime animation-style5" data-wow-delay="0.25s">
+                                <span class="sec-subtitle left-shape justify-content-center title-anime__title">REFERANSLARIMIZ</span>
+                                <h2 class="sec-title title-anime__title">Müşterimiz <span class="title-highlight">Hakkımızda</span> Ne Söylüyor</h2>
                             </div>
                             <div class="arraw-style1">
                                 <div class="custom-arraw wow animate__fadeInUp" data-wow-delay="0.45s">
@@ -938,6 +937,8 @@
                                 </div>
                             </div>
                         </div>
+    
+                        <!-- Video Popup -->
                         <div id="videoPopup2" class="video-popup">
                             <div class="video-popup-content">
                                 <span class="video-close">&times;</span>
@@ -947,6 +948,7 @@
                                 </video>
                             </div>
                         </div>
+    
                         <div class="testi-items wow animate__fadeInUp" data-wow-delay="0.35s">
                             <div class="vs-carousel testi-slider2" data-fade="true">
                                 <div class="testi-content">
@@ -1298,7 +1300,6 @@
                 video.currentTime = 0;
             });
         });
-        
     </script>
 
 </body>
